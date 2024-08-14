@@ -6,8 +6,22 @@
                 <h1>Manage Category</h1>
 
                 <br>
-                    
-                    <a href = "add-category.php" class="btn-primary">Add Category</a>
+
+            <?php
+            if(isset($_SESSION['add']))
+            {
+                echo $_SESSION['add']; //Displaying Session Message
+                unset($_SESSION['add']); //Removing Session Message
+            }
+
+            
+            ?>
+
+                <br><br><br>
+
+                    <!-- Button to Add Category-->
+            
+        <a href = "add-category.php" class="btn-primary">Add Category</a>
 
                     <br><br><br>
                     

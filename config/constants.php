@@ -15,4 +15,9 @@ $dbname = "Wow-Foods";
     $conn = mysqli_connect($servername,$username,$password) or die(mysqli_error());
     $db_select = mysqli_select_db($conn , $dbname ) or die(mysqli_error());
 
+// Enable error reporting
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 ?>
