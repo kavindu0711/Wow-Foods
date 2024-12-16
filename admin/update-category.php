@@ -50,7 +50,7 @@
         }
         ?>
 
-    <form action="" methode="POST" enctype="multipart/form-data">
+    <form action="" method="POST" enctype="multipart/form-data">
         <table class ="tbl-30">
             <tr>
                 <td>Title: </td>
@@ -88,26 +88,42 @@
             <tr>
                 <td>Featured: </td>
                 <td>
-                    <input <?php if($featured =="Yes"){echo "selected";}?>type="radio" name="featured" value="Yes"> Yes
-                    <input <?php if($featured =="Yes"){echo "selected";}?>type="radio" name="featured" value="No"> No
+                    <input <?php if($featured =="Yes"){echo "checked";}?> type="radio" name="featured" value="Yes"> Yes
+
+                    <input <?php if($featured =="No"){echo "checked";}?> type="radio" name="featured" value="No"> No
                 </td>
             </tr>
 
             <tr>
                 <td>Active: </td>
                 <td>
-                    <input type="radio" name="active" value="Yes"> Yes
-                    <input type="radio" name="active" value="No"> No
+                    <input <?php if($active =="Yes"){echo "checked";}?> type="radio" name="active" value="Yes"> Yes
+
+                    <input <?php if($active =="No"){echo "checked";}?> type="radio" name="active" value="No"> No
                 </td>
             </tr>
 
             <tr>
                 <td colspan="2">
+                    <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <input type="submit" name="submit" value="Update Category" class="btn-secondary">
                 </td>
             </tr>
         </table>
     </form>
+    <?php
+    if (isset($_POST['submit'])) {
+
+        //echo "Button Clicked";
+        //1. Get all the values from our form
+        $title = $_POST['title'];
+        $current_image = $_POST['current_image'];
+        $featured = $_POST['featured'];
+        $active = $_POST['active'];
+
+    }
+    ?>
 
     </div>
 </div>
